@@ -1,0 +1,31 @@
+[project]
+name = "promptllm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "garoloup", email = "fredwolff@free.fr" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=1.4.7",
+    "langchain-anthropic>=1.7.7",
+]
+
+[project.scripts]
+promptllm = "promptllm:main"
+
+[project.optional-dependencies]
+openai = [
+    "langchain-openai>=1.7.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.10,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
